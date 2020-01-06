@@ -1,3 +1,8 @@
+// ReSharper disable CommentTypo
+/// <reference path="../../../lib/Typings/jquery.typescript.definitelytyped/3.1.2/Content/Scripts/typings/jquery/jquery.d.ts"/>
+/// <reference path="../../../lib/Typings/toastr.typescript.definitelytyped/0.3.3/Content/Scripts/typings/toastr/toastr.d.ts"/>
+// ReSharper restore CommentTypo
+
 var selectAllCheckbox = $('#selectAll');
 var actionBtns = $('#multiActionBtns .btn');
 var itemCheckbox = '.item-checkbox';
@@ -52,7 +57,7 @@ function fromQueryString(name) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function bytesToSize(bytes) {
+function bytesToSize(bytes : number) {
   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
   if (bytes === 0) return '0 Byte';
   var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
@@ -123,7 +128,7 @@ $('.dropdown-custom .dropdown-item').on('click', function() {
 
 function reload(msg){
   toastr.success(msg);
-  setTimeout(function(){ location.reload(); }, 1000);
+  setTimeout(function(){ window.location.reload(); }, 1000);
 }
 
 function fail(jqXHR, exception) {

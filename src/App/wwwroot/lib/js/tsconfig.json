@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "commonjs"
+    , "target": "es6"
+    , "outDir": "out"
+    , "lib": [
+      "es6"
+    ]
+    , "sourceMap": true
+    //, "rootDir": "."
+  },
+  "files": [
+    "blog.ts",
+    "../../admin/js/app/app.ts",
+    "../../admin/js/app/dataService.ts",
+    "../../admin/js/app/editorController.ts",
+    "../../admin/js/app/notificationsController",
+    "../../admin/js/app/postsController.ts",
+    "../../lib/js/blog.ts",
+    "../../themes/box/assets/js/blog.ts",
+    "../../themes/bridge/assets/js/blog.ts",
+    "../../themes/cheese/assets/js/blog.ts",
+    "../../themes/metal/assets/js/blog.ts",
+    "../../themes/moments/assets/js/blog.ts",
+    "../../themes/ocean/assets/js/blog.ts",
+    "../../themes/paperkit/assets/js/blog.ts",
+    "../../themes/simple/assets/js/blog.ts",
+    "../../themes/spot/assets/js/blog.ts",
+    "../../themes/standard/assets/js/blog.ts",
+    "../../themes/star/assets/js/blog.ts",
+    "../../themes/vision/assets/js/blog.ts",
+    "../../themes/wide/assets/js/blog.ts"
+  ]
+}
