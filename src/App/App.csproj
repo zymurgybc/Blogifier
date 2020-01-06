@@ -38,8 +38,10 @@
     <Content Remove="wwwroot\admin\scss\**" />
     <Content Remove="wwwroot\admin\emails.json" />
     <Content Remove="wwwroot\admin\Gruntfile.js" />
+    <Content Remove="wwwroot\admin\js\lib\common.ts" />
     <Content Remove="wwwroot\admin\package.json" />
     <Content Remove="wwwroot\admin\package-lock.json" />
+    <Content Remove="wwwroot\lib\Typings\SimpleMDE\SimpleMDE.d.ts" />
     <Content Remove="wwwroot\themes\paperkit\assets\js\blog.ts" />
     <Content Remove="wwwroot\themes\simple\assets\js\blogs.ts" />
   </ItemGroup>

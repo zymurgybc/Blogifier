@@ -1,4 +1,12 @@
-﻿function getEditor(post) {
+﻿// ReSharper disable CommentTypo
+/// <reference path="../../../lib/Typings/jquery.typescript.definitelytyped/3.1.2/Content/Scripts/typings/jquery/jquery.d.ts"/>
+/// <reference path="../../../lib/Typings/toastr.typescript.definitelytyped/0.3.3/Content/Scripts/typings/toastr/toastr.d.ts"/>
+/// <reference path="../../../lib/Typings/SimpleMDE/SimpleMDE.d.ts"/>
+// ReSharper restore CommentTypo
+
+// ReSharper disable IdentifierTypo
+// ReSharper disable InconsistentNaming
+var getEditor = (post) => {
     var simplemde = new SimpleMDE({
         toolbar: [
             "bold", "italic", "heading-2", "|",
@@ -22,7 +30,7 @@
             bold: "__",
             italic: "_"
         },
-        element: document.getElementById("mdEditor"),
+        element: <HTMLTextAreaElement>document.getElementById("mdEditor"),
         indentWithTabs: false,
         insertTexts: {
             horizontalRule: ["", "\n\n-----\n\n"],
@@ -64,14 +72,14 @@
     return simplemde;
 }
 
-var _editor = {};
+var _editor  : any = {};
 
 function openFileMgr(editor) {
     _editor = editor;
     fileManagerController.open(insertImageCallback);
 }
 
-function insertYoutube(editor) {
+function insertYoutube(editor : any) {
     _editor = editor;
     var id = prompt("Please enter video ID", "");
 
@@ -88,3 +96,6 @@ scrollDiv.className = "scrollbar-measure";
 document.body.appendChild(scrollDiv);
 var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 document.body.removeChild(scrollDiv);
+
+// ReSharper restore InconsistentNaming
+// ReSharper restore IdentifierTypo

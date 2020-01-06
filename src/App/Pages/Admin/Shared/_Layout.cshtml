@@ -128,10 +128,8 @@
         function isAdmin(){
             return '@_isAdmin' === 'True' ? true : false;
         }
-        function getUrl(str) {
-            return webRoot + str;
-        }
     </script>
-    @RenderSection("Scripts", false)
+    <script src="~/lib/js/common.js"></script>
+@RenderSection("Scripts", false)
 </body>
 </html>

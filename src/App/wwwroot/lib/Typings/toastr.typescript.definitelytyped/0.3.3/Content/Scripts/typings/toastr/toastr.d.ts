@@ -3,8 +3,7 @@
 // Definitions by: Boris Yankov <https://github.com/borisyankov/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-
-/// <reference path="../jquery/jquery.d.ts" />
+/// <reference path="../../../../../../jquery.typescript.definitelytyped/3.1.2/Content/Scripts/typings/jquery/jquery.d.ts" />
 
 interface ToastrOptions {
 	/**

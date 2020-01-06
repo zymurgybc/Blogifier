@@ -1,7 +1,16 @@
+// ReSharper disable CommentTypo
+/// <reference path="../../../../lib/Typings/jquery.typescript.definitelytyped/3.1.2/Content/Scripts/typings/jquery/jquery.d.ts"/>
+/// <reference path="../../../../lib/Typings/toastr.typescript.definitelytyped/0.3.3/Content/Scripts/typings/toastr/toastr.d.ts"/>
+// ReSharper restore CommentTypo
+
+// ReSharper disable IdentifierTypo
 // logout
-function profileLogOut() {
-  $("#frmLogOut").submit();
-}
+declare var profileLogOut: () => void;
+profileLogOut = (profileLogOut !== null
+    ? profileLogOut
+    : () => {
+        $("#frmLogOut").submit();
+    });
 
 // tooltip
 $('[data-toggle="tooltip"]').tooltip();
@@ -13,16 +22,20 @@ document.body.appendChild(scrollDiv);
 var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 document.body.removeChild(scrollDiv);
 
-$('#blog-search').on('show.bs.modal', function() {
-  $(".blog-header").css({
-    "right": scrollbarWidth
-  });
-})
-$('#blog-search').on('hidden.bs.modal', function() {
-  $(".blog-header").css({
-    "right": "0"
-  });
-})
-$('#blog-search').on('shown.bs.modal', function() {
-  $('#blog-search .form-control').trigger('focus');
-})
+$('#blog-search').on('show.bs.modal',
+    function() {
+        $(".blog-header").css({
+            "right": scrollbarWidth
+        });
+    });
+$('#blog-search').on('hidden.bs.modal',
+    function() {
+        $(".blog-header").css({
+            "right": "0"
+        });
+    });
+$('#blog-search').on('shown.bs.modal',
+    function() {
+        $('#blog-search .form-control').trigger('focus');
+    });
+// ReSharper restore IdentifierTypo

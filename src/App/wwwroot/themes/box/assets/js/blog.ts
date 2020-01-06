@@ -1,7 +1,15 @@
+// ReSharper disable CommentTypo
+/// @reference "../../../../lib/Typings/jquery.typescript.definitelytyped/3.1.2/Content/Scripts/typings/jquery/jquery.d.ts"
+/// @reference "../../../../lib/Typings/toastr.typescript.definitelytyped/0.3.3/Content/Scripts/typings/toastr/toastr.d.ts"
+// ReSharper restore CommentTypo
+
 // logout
-function profileLogOut() {
-  $("#frmLogOut").submit();
-}
+declare var profileLogOut: () => void;
+profileLogOut = (profileLogOut !== null
+    ? profileLogOut
+    : () => {
+        $("#frmLogOut").submit();
+    });
 
 // tooltip
 $('[data-toggle="tooltip"]').tooltip();

@@ -1,4 +1,6 @@
-﻿var fileManagerController = function (dataService) {
+﻿/// <reference path="../../../lib/js/common.ts"/>
+
+var fileManagerController = function (dataService) {
     var callBack;
 
     function open(openCallback) {
@@ -18,7 +20,7 @@
                 callBack(id);
             }
             else {
-                for (i = 0; i < items.length; i++) {
+                for (var i = 0; i < items.length; i++) {
                     callBack(items[i].id);
                 }
             }
@@ -55,7 +57,7 @@
         return false;
     }
     function uploadSubmit() {
-        var data = new FormData($('#frmUpload')[0]);
+        var data = new FormData(<HTMLFormElement>$('#frmUpload')[0]);
 
         dataService.upload('api/assets/upload', data, submitCallback, fail);
     }
@@ -66,7 +68,7 @@
     function remove() {
         loading();
         var items = $('#fileManagerList input:checked');
-        for (i = 0; i < items.length; i++) {
+        for (var i = 0; i < items.length; i++) {
             if (i + 1 < items.length) {
                 dataService.remove('api/assets/remove?url=' + items[i].id, emptyCallback, fail);
             }
@@ -176,7 +178,7 @@
         check: check,
         showBtns: showBtns
     };
-}(DataService);
+}(dataService);
 
 $('#asset-search').keypress(function (event) {
     var keycode = event.keyCode ? event.keyCode : event.which;

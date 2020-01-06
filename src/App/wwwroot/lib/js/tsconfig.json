@@ -2,9 +2,9 @@
   "compilerOptions": {
     "module": "commonjs"
     , "target": "es6"
-    , "outDir": "out"
+    //, "outDir": "out"
     , "lib": [
-      "es6"
+      "es6", "dom"
     ]
     , "sourceMap": true
     //, "rootDir": "."
@@ -14,9 +14,11 @@
     "../../admin/js/app/app.ts",
     "../../admin/js/app/dataService.ts",
     "../../admin/js/app/editorController.ts",
+    "../../admin/js/app/fileManagerController.ts",
     "../../admin/js/app/notificationsController",
     "../../admin/js/app/postsController.ts",
     "../../lib/js/blog.ts",
+    "../../lib/js/common.ts",
     "../../themes/box/assets/js/blog.ts",
     "../../themes/bridge/assets/js/blog.ts",
     "../../themes/cheese/assets/js/blog.ts",

@@ -3,6 +3,7 @@
 /// <reference path="../../../lib/Typings/toastr.typescript.definitelytyped/0.3.3/Content/Scripts/typings/toastr/toastr.d.ts"/>
 // ReSharper restore CommentTypo
 
+// ReSharper disable IdentifierTypo
 var selectAllCheckbox = $('#selectAll');
 var actionBtns = $('#multiActionBtns .btn');
 var itemCheckbox = '.item-checkbox';
@@ -38,9 +39,12 @@ function toggleActionBtns() {
 toastr.options.positionClass = 'toast-bottom-right';
 toastr.options.backgroundpositionClass = 'toast-bottom-right';
 
-function profileLogOut() {
-  $("#frmLogOut").submit();
-}
+declare var profileLogOut: () => void;
+profileLogOut = (profileLogOut != null
+    ? profileLogOut
+    : () => {
+        $("#frmLogOut").submit();
+    });
 
 function getDate(date) {
   var d = new Date(Date.parse(date));
@@ -57,11 +61,16 @@ function fromQueryString(name) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function bytesToSize(bytes : number) {
+function bytesToSize(bytes : number) : string {
   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
   if (bytes === 0) return '0 Byte';
-  var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-  return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+  var i = parseInt((Math.floor(Math.log(bytes) / Math.log(1024))).toString());
+  return roundToPrecision(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+}
+// round X off at a specific number of digits.  In Radix 10, 
+// precision 2 is two decimal places
+function roundToPrecision(x : number, precision : number, radix = 10) : number {
+    return Math.round(x * Math.pow(radix, precision)) / Math.pow(radix, precision);
 }
 
 function getMonthName(i) {
@@ -153,3 +162,4 @@ function fail(jqXHR, exception) {
 }
 
 function emptyCallback() { }
+// ReSharper restore IdentifierTypo

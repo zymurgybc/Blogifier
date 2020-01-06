@@ -41,7 +41,7 @@
     remove: remove,
     filter: filter
   };
-}(DataService);
+}(dataService);
 
 // filters collapsable
 $('.filter-group-title').on('click', function() {

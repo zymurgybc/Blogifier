@@ -1,5 +1,12 @@
-var DataService = function () {
-    var get = function (url, done, fail, obj) {
+// ReSharper disable CommentTypo
+/// <reference path="../../../lib/Typings/jquery.typescript.definitelytyped/3.1.2/Content/Scripts/typings/jquery/jquery.d.ts"/>
+/// <reference path="../../../lib/Typings/toastr.typescript.definitelytyped/0.3.3/Content/Scripts/typings/toastr/toastr.d.ts"/>
+/// <reference path="../../../lib/js/common.ts"/>
+// ReSharper restore CommentTypo
+
+// ReSharper disable IdentifierTypo
+var dataService = (() => {
+    var get = (url : string, done, fail, obj = null) => {
         var data = obj ? JSON.stringify(obj) : {};
         var options = {
             url: getUrl(url),
@@ -12,7 +19,7 @@ var DataService = function () {
         };
         $.ajax(options);
     };
-    var post = function (url, obj, done, fail) {
+    var post = (url, obj, done, fail) => {
         var options = {
             url: getUrl(url),
             type: "POST",
@@ -24,7 +31,7 @@ var DataService = function () {
         }
         $.ajax(options);
     };
-    var put = function (url, obj, done, fail) {
+    var put = (url, obj, done, fail) => {
         var data = obj ? JSON.stringify(obj) : {};
         var options = {
             url: getUrl(url),
@@ -37,7 +44,7 @@ var DataService = function () {
         };
         $.ajax(options);
     }
-    var remove = function (url, done, fail) {
+    var remove = (url, done, fail) => {
         var options = {
             url: getUrl(url),
             type: "DELETE",
@@ -47,8 +54,8 @@ var DataService = function () {
         };
         $.ajax(options);
     };
-    var upload = function (url, obj, done, fail) {
-        $.ajax({
+    var upload = (url, obj, done, fail) => {
+        var options = {
             type: "POST",
             url: getUrl(url),
             enctype: 'multipart/form-data',
@@ -58,7 +65,8 @@ var DataService = function () {
             data: obj,
             success: done,
             error: fail
-        });
+        };
+        $.ajax(options);
     };
     return {
         get: get,
@@ -67,4 +75,5 @@ var DataService = function () {
         put: put,
         upload: upload
     }
-}();
+})();
+// ReSharper restore  IdentifierTypo
